@@ -2,9 +2,9 @@ const orm = require("../config/orm");
 
 var burger = {
     selectAll: function(cb) {
-        orm.selectAll("burgers", function(data)) {
+        orm.selectAll("burgers", function(data) {
             cb(data);
-        }
+        })
     },
 
     insertOne: function(columns, values, cb) {
