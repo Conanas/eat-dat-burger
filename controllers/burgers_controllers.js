@@ -12,7 +12,6 @@ router.get("/", function(req, res) {
 
 // new burger
 router.post("/api/burgers", function(req, res) {
-    console.log("req.body= ", req.body)
     burger.insertOne(["burger_name", "devoured"], [req.body.burger_name, false], function(data) {
         res.json({ id: data.insterId });
     })
