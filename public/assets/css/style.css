@@ -1,0 +1,77 @@
+:root {
+    --prussian-blue: #003049;
+    --maximum-red: #D62828;
+    --orange: #F77F00;
+    --maximum-yellow-red: #FCBF49;
+    --lemon-meringue: #EAE2B7;
+    /* header */
+    --header-bg: var(--prussian-blue);
+    --header-color: var(--lemon-meringue);
+    /* main */
+    --main-bg: var(--lemon-meringue);
+    --main-color: var(--prussian-blue);
+    /* buttons */
+    --button-bg: var(--maximum-red);
+    --button-color: var(--maximum-yellow-red);
+    /* footer */
+    --footer-bg: var(--prussian-blue);
+    --footer-color: var(--lemon-meringue);
+    /* footer anchors */
+    --anchor-color: var(--maximum-red);
+}
+
+header {
+    background-color: var(--header-bg);
+    color: var(--header-color);
+    padding: 40px 0px;
+}
+
+main {
+    padding: 40px 0px;
+    background-color: var(--main-bg);
+    color: var(--main-color);
+}
+
+.form-div {
+    margin: 40px auto;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--button-color);
+}
+
+footer {
+    /* position: absolute;
+    bottom: 0;
+    width: 100%; */
+    background-color: var(--footer-bg);
+    color: var(--footer-color);
+    padding: 40px 0px;
+    /* height: 136px; */
+}
+
+.links-div-anchor {
+    font-size: 36px;
+    text-decoration: none !important;
+    color: var(--anchor-color);
+}
+
+@media only screen and (min-width: 768px) {
+    .page-container {
+        position: relative;
+        min-height: 100vh;
+    }
+    main {
+        padding-bottom: 136px;
+    }
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: var(--footer-bg);
+        color: var(--footer-color);
+        padding: 40px 0px;
+        height: 136px;
+    }
+}
