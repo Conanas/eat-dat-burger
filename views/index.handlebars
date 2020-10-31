@@ -1,10 +1,66 @@
-<ul>
-  {{#each burgers}}
-    <li>{{id}}, {{burger_name}}, {{devoured}} <button class="devour-button" data-id="{{id}}" data-devoured="{{devoured}}">Devour</button></li>
-  {{/each}}
-</ul>
+<div class="page-container">
+	<header>
+		<div class="container d-flex justify-content-center">
+			<h1>Eat Dat Burger <i class="fas fa-hamburger"></i></h1>
+		</div>
+	</header>
 
-<form class="add-burger-form">
-    <textarea name="add-burger-text" id="add-burger-textarea" cols="30" rows="10"></textarea>
-    <button type="submit">Submit</button>
-</form>
+	<main>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-4 burger-list">
+					<h2>Burgers</h2>
+					<ol>
+						{{#each burgers}}
+							{{#unless devoured}}
+								<li>
+									<button class="devour-button" data-id="{{id}}" data-devoured="{{devoured}}">
+										Devour
+									</button>
+									<span class="burgers-item-info">{{burger_name}}</span>
+								</li>
+							{{/unless}}
+						{{/each}}
+					</ol>
+				</div>
+				<div class="col-md-4 burger-list">
+					<h2>Devoured Burgers</h2>
+					<ol>
+						{{#each burgers}}
+							{{#if devoured}}
+							<li>{{burger_name}}</li>
+							{{/if}}
+						{{/each}}
+					</ol>
+				</div>
+			</div>
+
+			<div class="row form-div">
+				<div class="col d-flex justify-content-center">
+					<form class="add-burger-form d-flex flex-column">
+						<textarea name="add-burger-text" id="add-burger-textarea" cols="30" rows="3" placeholder="Enter you burger here eg. Double Cheese Burger"></textarea>
+						<button type="submit">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container d-flex flex-column align-items-center">
+			<div>
+				<label id="phone-number" class="phone-number">Phone: 0406 253 030 || </label>
+				<label id="email-address" class="email-address">Email: tmhaigh@gmail.com || </label>
+				<label>Location: Melbourne, Victoria, Australia</label>
+			</div>
+			<div>
+				<a class="links-div-anchor" href="https://www.linkedin.com/in/thomas-haigh-5960b81aa/" target="_blank">
+					<i class="fab fa-linkedin"></i>
+				</a>
+				<a class="links-div-anchor" href="https://github.com/Conanas" target="_blank">
+					<i class="fab fa-github"></i>
+				</a>
+			</div>
+		</div>
+	</footer>
+</div>
