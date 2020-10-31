@@ -1,39 +1,34 @@
 const connection = require("./connection");
 
+// creates an array of question marks from a given array length
+// to be used for createing sql queries for inserting multiple arguments
 function printQuestionMarks(num) {
     var arr = [];
-
     for (var i = 0; i < num; i++) {
         arr.push("?");
     }
-
     return arr.toString();
 }
 
-// Helper function to convert object key/value pairs to SQL syntax
+// converts the key value pairs of objects into strings
+// to be used for creating sql queries from given objects
 function objToSql(ob) {
     var arr = [];
-
-    // loop through the keys and push the key/value as a string int arr
     for (var key in ob) {
         var value = ob[key];
-        // check to skip hidden properties
         if (Object.hasOwnProperty.call(ob, key)) {
-            // if string with spaces, add quotations (Lana Del Grey => 'Lana Del Grey')
             if (typeof value === "string" && value.indexOf(" ") >= 0) {
                 value = "'" + value + "'";
             }
-            // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-            // e.g. {sleepy: true} => ["sleepy=true"]
             arr.push(key + "=" + value);
         }
     }
-
-    // translate array of strings to a single comma-separated string
     return arr.toString();
 }
 
+// object relational model
 var orm = {
+    //selects all columns from a given table
     selectAll: function(table, cb) {
         let query = "SELECT * FROM ??";
         let queryArray = [table];
@@ -43,6 +38,9 @@ var orm = {
         });
     },
 
+    // inserts one new row into a given table name
+    // columns are inputted as an array and converted to a sting to be read by mysql
+    // values are the new values of the given row
     insertOne: function(table, columns, values, cb) {
         let query = `
         INSERT INTO ?? (${columns.toString()})
@@ -54,6 +52,8 @@ var orm = {
         })
     },
 
+    // updates one row in a given table
+    // columnsValues is an object that gets converted into a string using objToSql function
     updateOne: function(table, columnsValues, condition, cb) {
         let query = `
         UPDATE ??
@@ -67,4 +67,5 @@ var orm = {
     }
 }
 
+// export the orm
 module.exports = orm;

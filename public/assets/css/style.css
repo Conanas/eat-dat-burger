@@ -1,4 +1,7 @@
+/* root for storing variables fo background and text color for all different elements */
+
 :root {
+    /* color theme */
     --prussian-blue: #003049;
     --maximum-red: #D62828;
     --orange: #F77F00;
@@ -20,9 +23,15 @@
     --anchor-color: var(--maximum-red);
 }
 
+
+/* set font for the whole document */
+
 body {
     font-family: 'Roboto', sans-serif;
 }
+
+
+/* header background and text colors */
 
 header {
     background-color: var(--header-bg);
@@ -30,10 +39,16 @@ header {
     padding: 40px 0px;
 }
 
+
+/* fonts for all headings */
+
 h1,
 h2 {
     font-family: 'Lobster', cursive;
 }
+
+
+/* main padding and colors */
 
 main {
     padding: 40px 0px;
@@ -41,24 +56,32 @@ main {
     color: var(--main-color);
 }
 
+
+/* form margin set */
+
 .form-div {
     margin: 40px auto;
 }
+
+
+/* set background and text colors */
 
 button {
     background-color: var(--button-bg);
     color: var(--button-color);
 }
 
+
+/* set footer background and text colors */
+
 footer {
-    /* position: absolute;
-    bottom: 0;
-    width: 100%; */
     background-color: var(--footer-bg);
     color: var(--footer-color);
     padding: 40px 0px;
-    /* height: 136px; */
 }
+
+
+/* set the anchors for the linkedIn and gitHub, removed text-decoration */
 
 .links-div-anchor {
     font-size: 36px;
@@ -66,14 +89,20 @@ footer {
     color: var(--anchor-color);
 }
 
+
+/* media queries mainly to ensure the footer stays at the bottom of the screen but moves when the content becomes larger than the screen */
+
 @media only screen and (min-width: 768px) {
+    /* pages container that envelopes the whole document */
     .page-container {
         position: relative;
         min-height: 100vh;
     }
+    /* main bottom padding increased to allow space for the footer */
     main {
         padding-bottom: 136px;
     }
+    /* footer position to stay at the bottom of the screen */
     footer {
         position: absolute;
         bottom: 0;

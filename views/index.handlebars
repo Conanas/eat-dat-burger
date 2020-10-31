@@ -1,16 +1,22 @@
+{{!-- container for entire page --}}
 <div class="page-container">
+	{{!-- header contains page title with burger logo --}}
 	<header>
 		<div class="container d-flex justify-content-center">
 			<h1>Eat Dat Burger <i class="fas fa-hamburger"></i></h1>
 		</div>
 	</header>
 
+	{{!-- main --}}
 	<main>
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-4 burger-list">
+					{{!-- list for burgers waiting to be devoured --}}
 					<h2>Burgers</h2>
 					<ol>
+						{{!-- for each burger in the database that has not been devoured --}}
+						{{!-- display in list with devour button containg burgers id and devoured state --}}
 						{{#each burgers}}
 							{{#unless devoured}}
 								<li>
@@ -24,8 +30,10 @@
 					</ol>
 				</div>
 				<div class="col-md-4 burger-list">
+					{{!-- list of burgers in the sql database that have been devoured --}}
 					<h2>Devoured Burgers</h2>
 					<ol>
+						{{!-- display each burger that has been devoured --}}
 						{{#each burgers}}
 							{{#if devoured}}
 							<li>{{burger_name}}</li>
@@ -35,6 +43,8 @@
 				</div>
 			</div>
 
+			{{!-- form that contain a textarea for the user to input a new burger --}}
+			{{!-- contains submit button to submit the new burger --}}
 			<div class="row form-div">
 				<div class="col d-flex justify-content-center">
 					<form class="add-burger-form d-flex flex-column">
@@ -46,6 +56,7 @@
 		</div>
 	</main>
 
+	{{!-- footer with my details and links to my github and linkedin --}}
 	<footer>
 		<div class="container d-flex flex-column align-items-center">
 			<div>
