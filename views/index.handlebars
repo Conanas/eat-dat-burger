@@ -1,6 +1,6 @@
 <ul>
   {{#each burgers}}
-    <li>{{id}}, {{burger_name}}, {{devoured}}</li>
+    <li>{{id}}, {{burger_name}}, {{devoured}} <button class="devour-button" data-id="{{id}}" data-devoured="{{devoured}}">Devour</button></li>
   {{/each}}
 </ul>
 
