@@ -37,7 +37,6 @@ var orm = {
     selectAll: function(table, cb) {
         let query = "SELECT * FROM ??";
         let queryArray = [table];
-        console.log(queryArray);
         connection.query(query, queryArray, function(err, data) {
             if (err) throw err;
             cb(data);
@@ -46,8 +45,8 @@ var orm = {
 
     insertOne: function(table, columns, values, cb) {
         let query = `
-        INSERT INTO ? (${columns.toString()})
-        VALUES (${printQuestionMarks(vals.length)})`
+        INSERT INTO ?? (${columns.toString()})
+        VALUES (${printQuestionMarks(values.length)})`
         let queryArray = [table].concat(values);
         connection.query(query, queryArray, function(err, data) {
             if (err) throw err;
