@@ -54,12 +54,12 @@ var orm = {
         })
     },
 
-    updateOne: function(table, columnsValues, id, cb) {
+    updateOne: function(table, columnsValues, condition, cb) {
         let query = `
-        UPDATE ?
+        UPDATE ??
         SET ${objToSql(columnsValues)}
-        WHERE id=?`
-        let queryArray = [table, id];
+        WHERE ${condition}`
+        let queryArray = [table];
         connection.query(query, queryArray, function(err, data) {
             if (err) throw err;
             cb(data);
