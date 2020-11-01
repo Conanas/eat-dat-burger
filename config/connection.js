@@ -1,16 +1,9 @@
 const mysql = require("mysql");
 
-const { Client } = require('pg');
-
 // mysql connection configurations
 let connection;
 if (process.env.DATABASE_URL) {
-    connection = new Client({
-        connectionString: process.env.DATABASE_URL,
-        ssl: {
-            rejectUnauthorized: false
-        }
-    });
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
     connection = mysql.createConnection({
         host: "localhost",
