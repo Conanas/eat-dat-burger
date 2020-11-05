@@ -27,7 +27,8 @@
 /* set font for the whole document */
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Abel', sans-serif;
+    font-weight: 700;
 }
 
 
