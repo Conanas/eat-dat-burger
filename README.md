@@ -21,4 +21,4 @@ The clients new burger will be autmatically listed as yet to be devoured with a 
 
 ## Screenshot
 
-![Eat Dat Burger Screeshot](screenshot\eat-dat-burger-screenshot.png "Eat Dat Burger Screeshot")
+![Eat Dat Burger Screeshot](./screenshot/eat-dat-burger-screenshot.png "Eat Dat Burger Screeshot")
